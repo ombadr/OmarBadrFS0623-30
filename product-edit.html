@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--BOOTSTRAP ICONS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script type="module" src="assets/js/editProduct.js" defer></script>
+    <script type="module" src="assets/js/utils/utils.js" defer></script>
+    <title>Edit Product</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">E-commerce</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/product-add.html"
+                  >Add product</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="text-center p-3">Edit Product</h1>
+
+      <!--LOADING SPINNER-->
+      <div class="d-flex justify-content-center">
+        <div
+          class="spinner-border text-primary"
+          role="status"
+          id="loadingSpinner"
+        ></div>
+      </div>
+
+      <!--EDIT  PRODUCT FORM-->
+      <div class="container my-5" id="productForm">
+        <div class="row">
+          <div class="col-md-8">
+            <form>
+              <div class="mb-3">
+                <label for="productName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="productName" />
+              </div>
+
+              <div class="mb-3">
+                <label for="productDescription" class="form-label"
+                  >Description</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="productDescription"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="productBrand" class="form-label">Brand</label>
+                <input type="text" class="form-control" id="productBrand" />
+              </div>
+
+              <div class="mb-3">
+                <label for="productImageUrl" class="form-label"
+                  >Image Url</label
+                >
+                <input type="text" class="form-control" id="productImageUrl" />
+                <div class="invalid-feedback">
+                  Please enter a valid url for the image.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="productPrice" class="form-label">Price</label>
+                <input type="text" class="form-control" id="productPrice" />
+                <div class="invalid-feedback">
+                  Please enter a valid number for the price.
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#confirmationModal"
+              >
+                Delete Product
+              </button>
+              <button type="button" class="btn btn-primary" id="editButton">
+                Edit Product
+              </button>
+
+              <!--CONFIRMATION MODAL-->
+              <div
+                class="modal fade"
+                id="confirmationModal"
+                tabindex="-1"
+                aria-labelledby="confirmationModal"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="confirmationModal">
+                        Delete
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      Do you really want to delete the product?
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        id="deleteButton"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--END CONFIRMATION MODAL-->
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
